@@ -4,7 +4,8 @@ class NameForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: '',
+            title: '',
+            author:'',
             file1: null,
             file2: null
         };
@@ -24,8 +25,9 @@ class NameForm extends Component {
         console.log(this.state.file2)
     }
 
-    handleSubmit(event) {
-        event.preventDefault();
+    handleSubmit(e) {
+        e.preventDefault();
+        hola();
     }
 
     render() {
@@ -35,13 +37,15 @@ class NameForm extends Component {
                     <div className="form-group row">
                         <label className="col-sm-2 col-form-label">Título</label>
                         <div className="col-sm-10">
-                            <input type="title" className="form-control" value={this.state.title} placeholder="Título"/>
+                            <input type="title" className="form-control" value={this.state.title} 
+                            onChange={(e)=>{this.setState({title: e.target.value})}} placeholder="Título"/>
                         </div>
                     </div>
                     <div className="form-group row">
                         <label className="col-sm-2 col-form-label">Autor</label>
                         <div className="col-sm-10">
-                            <input type="author" className="form-control" value={this.state.author} placeholder="Autor"/>
+                            <input type="author" className="form-control" value={this.state.author} 
+                            onChange={(e)=>{this.setState({author: e.target.value})}} placeholder="Autor"/>
                         </div>
                     </div>
                     <div className="form-group row">
@@ -58,7 +62,7 @@ class NameForm extends Component {
                     </div>
                     <div className="form-group row">
                         <div className="col-sm-10">
-                            <button type="submit" className="btn btn-primary">Upload</button>
+                            <button type="submit" className="btn btn-primary">Subir libro</button>
                         </div>
                     </div>
                 </form>
