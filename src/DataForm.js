@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { upload } from './utils.js';
 
-class NameForm extends Component {
+class DataForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -27,7 +28,7 @@ class NameForm extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        hola();
+        upload()
     }
 
     render() {
@@ -71,4 +72,4 @@ class NameForm extends Component {
   }
 }
 
-export default NameForm;
+export default DataForm;

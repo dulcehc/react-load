@@ -1,3 +1,5 @@
+import Appbase from 'appbase-js';
+
 const appbaseRef = new Appbase({
 	url: "https://scalr.api.appbase.io",
 	app: "openbook",
@@ -39,7 +41,9 @@ function getDate(){
     return today;
 }
 
-function upload(){
+export function upload(){
+    console.log('calling upload function')
+    /*
     let title = document.getElementById('inputTitle').value
     let autor = document.getElementById('inputAuthor').value
     let portada = document.getElementById('file1')
@@ -83,7 +87,7 @@ function upload(){
     .catch((error) => {
         console.log(`ocurrió un error: ${error}`);
     });
-    
+    */
 
 }
 
